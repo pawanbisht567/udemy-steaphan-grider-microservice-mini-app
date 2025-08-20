@@ -1,5 +1,6 @@
 const  express = require('express');
 const { randomBytes } = require('crypto');
+const axios = require('axios');
 const cors = require('cors')
 const app = express();
 
@@ -15,7 +16,13 @@ app.get('/posts', (req, res) => {
     res.send(posts);
 });
 
-app.post('/post', (req, res) => {
+app.post('/events', (req, res) => {
+    console.log('Inside of Events Route')
+    console.log(req.body);
+    return res.status(200).send('Hi From Posts')
+})
+
+app.post('/post', async (req, res) => {
     const id = randomBytes(4).toString('hex');
     const { title } = req.body;
 
@@ -23,6 +30,14 @@ app.post('/post', (req, res) => {
         id, title
     };
 
+    await axios.post('http://localhost:4005/events', {
+        type: 'PostCreated',
+        data: {
+            id, title
+        }
+    }).then((data) => {
+        console.log('Event sent to event bus:', data);
+    }).catch(err => {console.log(err)})
     res.status(201).send(posts[id]);
 });
 
