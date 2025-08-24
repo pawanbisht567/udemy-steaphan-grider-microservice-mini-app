@@ -9,8 +9,8 @@ app.post('/events', async (req, res) => {
     axios.post('http://localhost:4000/events', event).then((data)=> {
         console.log('We successfully sent a post event',data.data)
     }).catch(err => {console.log('Post ',err.status)})
-    await axios.post('http://localhost:4001/events', event).catch(err => {console.log('Comment ',err.status)})
-    await axios.post('http://localhost:4002/events', event).catch(err => {console.log('Query ',err.status)})
+    await axios.post('http://localhost:4001/events', event).catch(err => {console.log('Comment ', err.status)})
+    await axios.post('http://localhost:4002/events', event).catch(err => {console.log('Query ', err.status)})
     res.send({ status: 'OK' })
 })
 
