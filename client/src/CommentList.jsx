@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 const CommentList = ({ commentsList }) => {
 
@@ -10,11 +9,11 @@ const CommentList = ({ commentsList }) => {
     //     setComments(res.data)
     // }
 
-    useEffect(() => {
-        // fetchData();
-    }, [])
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
 
-    const renderedComments = comments.map(comment => {
+    const renderedComments = commentsList.map(comment => {
         return <li key ={comment.id}>{comment.content}</li>
     })
     return <div>{renderedComments}</div>
