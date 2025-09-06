@@ -18,7 +18,6 @@ app.get('/posts', (req, res) => {
 
 app.post('/events', (req, res) => {
     console.log('Inside of Events Route')
-    console.log(req.body);
     return res.status(200).send('Hi From Posts')
 })
 
@@ -30,13 +29,14 @@ app.post('/post', async (req, res) => {
         id, title
     };
 
+    // Calling to Event Bus
     await axios.post('http://localhost:4005/events', {
         type: 'PostCreated',
         data: {
             id, title
         }
     }).then((data) => {
-        console.log('Event sent to event bus:', data);
+        console.log('Everything is good', data.status);
     }).catch(err => {console.log(err)})
     res.status(201).send(posts[id]);
 });

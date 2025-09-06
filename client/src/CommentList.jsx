@@ -13,8 +13,23 @@ const CommentList = ({ commentsList }) => {
     //     fetchData();
     // }, [])
 
-    const renderedComments = commentsList.map(comment => {
-        return <li key ={comment.id}>{comment.content}</li>
+    const renderedComments = comments.map(comment => {
+        console.log('Comment:', comment);
+        let commentContent = '';
+        switch(comment.status) {
+            case 'approved':
+                commentContent = comment.content;
+                break;
+            case 'rejected':
+                commentContent = 'Comment has been rejected';
+                break;
+            case 'pending':
+                commentContent = 'Comment is being moderated';
+                break;
+            default:
+                commentContent = 'Comment is being moderated';        
+        }
+        return <li key ={comment.id}>{commentContent}</li>
     })
     return <div>{renderedComments}</div>
 }
