@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: posts
-          image: pawan-bisht/posts:0.0.1
+          image: pawanbisht94/posts
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "64Mi"
