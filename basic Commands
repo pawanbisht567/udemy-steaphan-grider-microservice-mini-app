@@ -1,0 +1,4 @@
+kubectl apply -f <file-name?.yml
+kubectl get deployments
+kubectl get pods
+kubectl logs <pod-name>
