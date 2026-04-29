@@ -42,6 +42,6 @@ app.post('/post', async (req, res) => {
 });
 
 app.listen(4000, () => {
-    console.log('V55 Hello World Pawan Bisht')
+    console.log('Hello World Pawan Bisht')
     console.log('Server running at 4000')
 })
