@@ -23,3 +23,16 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-svc
+spec:
+  selector:
+    app: posts
+  ports:
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
