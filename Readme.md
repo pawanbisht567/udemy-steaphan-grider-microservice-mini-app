@@ -46,3 +46,32 @@ For getting the response of the container from the browser we can use the 31842/
 but we generally use the below command
 
 kubectl port-forward service/posts-srv 4000:4000
+
+
+Inside Kubernetes Cluster
+
+           Request
+              ↓
+   event-bus-svc:4005 (this service itself listening to this PORT number)
+        (Service Port)
+              ↓
+   forwards traffic to
+              ↓
+       Pod Container (Int this if our application POD runs on the 4005 then svc forward this port to 4005)
+           :4005
+       (targetPort)
+
+
+
+
+              Service
+           event-bus-svc
+                 :4005
+                    ↓
+          selector: app=event-bus
+                    ↓
+         ┌──────────────────┐
+         │      Pod         │
+         │ app=event-bus    │
+         │ Container:4005   │
+         └──────────────────┘
