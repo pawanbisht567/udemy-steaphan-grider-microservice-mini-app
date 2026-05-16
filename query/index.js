@@ -42,11 +42,6 @@ app.post('/events', (req, res) => {
 
     handleEvent(type, data);
     console.log('Query post:', JSON.stringify(post));
-    console.log()
-    console.log()
-    console.log()
-    console.log()
-    console.log()
 
     res.send({ status: 'OK' })
 })
