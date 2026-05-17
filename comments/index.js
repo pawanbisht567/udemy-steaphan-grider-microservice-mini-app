@@ -29,7 +29,7 @@ app.post('/events', (req, res) => {
                 comment.status = status;
             }
         }
-        axios.post('http://localhost:4005/events', {
+        axios.post('http://event-bus-svc:4005/events', {
             type: 'UpdateComment',
             data: {
                 ...event.data,
@@ -54,7 +54,7 @@ app.post('/post/:id/comments', (req, res) => {
     commentsByPostId[req.params.id] = comments;
 
     // Throws event to event bus running on 4005 port number
-    axios.post('http://localhost:4005/events', {
+    axios.post('http://event-bus-svc:4005/events', {
         type: 'CommentCreated',
         data: {
             id: commentId,
