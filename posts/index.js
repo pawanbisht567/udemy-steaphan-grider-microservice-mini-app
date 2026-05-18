@@ -21,7 +21,7 @@ app.post('/events', (req, res) => {
     return res.status(200).send('Hi From Posts')
 })
 
-app.post('/post', async (req, res) => {
+app.post('/post/create', async (req, res) => {
     const id = randomBytes(4).toString('hex');
     const { title } = req.body;
 

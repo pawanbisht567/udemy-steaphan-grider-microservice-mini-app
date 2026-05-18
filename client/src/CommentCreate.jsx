@@ -8,7 +8,7 @@ const  CommentCreate = ({ postId }) => {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        axios.post(`http://localhost:4001/post/${postId}/comments`, {
+        axios.post(`http://posts.com/post/${postId}/comments`, {
             content
         })
 
