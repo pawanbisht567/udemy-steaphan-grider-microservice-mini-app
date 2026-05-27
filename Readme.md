@@ -53,7 +53,7 @@ kubectl port-forward service/posts-srv 4000:4000
 ```
 
 Inside Kubernetes Cluster
-
+```
            Request
               ↓
    event-bus-svc:4005 (this service itself listening to this PORT number)
@@ -77,3 +77,4 @@ Inside Kubernetes Cluster
          │ app=event-bus    │
          │ Container:4005   │
          └──────────────────┘
+```
