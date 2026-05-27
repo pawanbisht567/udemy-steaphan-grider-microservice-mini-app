@@ -78,3 +78,10 @@ Inside Kubernetes Cluster
          │ Container:4005   │
          └──────────────────┘
 ```
+
+
+Changing the host with the given IP address in windows, in host file (not calendar file)
+
+```
+C:\Windows\System32\drivers\etc
+```
