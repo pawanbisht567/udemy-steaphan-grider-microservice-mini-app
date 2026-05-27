@@ -47,7 +47,6 @@ but we generally use the below command
 
 kubectl port-forward service/posts-srv 4000:4000
 
-
 Inside Kubernetes Cluster
 
            Request
