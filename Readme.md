@@ -9,14 +9,15 @@ All Objects that we create are made by first creating the config file and then a
 ```
 
 We need to use the images from the docker-hub, so we need to push them to docker hub
+```
 docker build -t pawanbisht94/posts .
 docker push pawanbisht94/posts
-
+```
 
 then
-
+```
 kubectl rollout restart deployment <deployment-name>
-
+```
 
 In service
 port: 4000    means which PORT number runs on POD
