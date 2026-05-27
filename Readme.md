@@ -85,3 +85,9 @@ Changing the host with the given IP address in windows, in host file (not calend
 ```
 C:\Windows\System32\drivers\etc
 ```
+
+Remember the skaffold setup
+commands
+```
+skaffold dev
+```
