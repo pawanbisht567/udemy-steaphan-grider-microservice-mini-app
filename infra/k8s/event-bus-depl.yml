@@ -34,5 +34,5 @@ spec:
   ports:
     - name: event-bus
       protocol: TCP
-      port: 4005
-      targetPort: 4005
+      port: 4005       # Service exposes itself internally on port 4005
+      targetPort: 4005 # this must match to the port number defined in app.listen() port in the code
