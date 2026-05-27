@@ -22,6 +22,7 @@ In service
 port: 4000    means which PORT number runs on POD
 targetPort: 4000   means which PORT number runs on the SERVICE
 
+```
 kubectl describe service posts-srv
 Name:                     posts-srv
 Namespace:                default
@@ -41,11 +42,14 @@ Session Affinity:         None
 External Traffic Policy:  Cluster
 Internal Traffic Policy:  Cluster
 Events:                   <none>
+```
 
 For getting the response of the container from the browser we can use the 31842/TCP
 but we generally use the below command
 
+```
 kubectl port-forward service/posts-srv 4000:4000
+```
 
 Inside Kubernetes Cluster
 
@@ -59,8 +63,6 @@ Inside Kubernetes Cluster
        Pod Container (Int this if our application POD runs on the 4005 then svc forward this port to 4005)
            :4005
        (targetPort)
-
-
 
 
               Service
