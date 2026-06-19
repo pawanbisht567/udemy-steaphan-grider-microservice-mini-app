@@ -77,3 +77,8 @@ Inside Kubernetes Cluster
          │ app=event-bus    │
          │ Container:4005   │
          └──────────────────┘
+
+Note : In this we Generally send the data from POST service to EVENT BUS service via through CLUSTER-IP service,
+then EVENT service sends the DATA to COMMENT or MODERATION svc, via the respective CLUSTER-IP services.
+Means
+CLUSTER-IP(EVENT-BUS) -> EVENT-BUS -> DATA -> CLUSTER-IP (COMMENT) -> COMMENT POD 
