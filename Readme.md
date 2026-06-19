@@ -53,7 +53,7 @@ kubectl port-forward service/posts-srv 4000:4000
 ```
 
 Inside Kubernetes Cluster
-
+```
            Request
               ↓
    event-bus-svc:4005 (this service itself listening to this PORT number)
@@ -82,3 +82,17 @@ Note : In this we Generally send the data from POST service to EVENT BUS service
 then EVENT service sends the DATA to COMMENT or MODERATION svc, via the respective CLUSTER-IP services.
 Means
 CLUSTER-IP(EVENT-BUS) -> EVENT-BUS -> DATA -> CLUSTER-IP (COMMENT) -> COMMENT POD 
+```
+
+
+Changing the host with the given IP address in windows, in host file (not calendar file)
+
+```
+C:\Windows\System32\drivers\etc
+```
+
+Remember the skaffold setup
+commands
+```
+skaffold dev
+```
