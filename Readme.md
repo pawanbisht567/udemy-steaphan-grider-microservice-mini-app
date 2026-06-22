@@ -96,3 +96,6 @@ commands
 ```
 skaffold dev
 ```
+
+type this on browser like Chrome and Brave
+'thisisunsafe'
